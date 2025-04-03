@@ -33,9 +33,9 @@ const RequestPage: React.FC = () => {
     ];
 
     const data = [
-        { key: "1", id: "1", name: "Заявка на выдачу документа", status: "В процессе" },
-        { key: "2", id: "2", name: "Заявка на консультацию", status: "Готово" },
-        { key: "3", id: "3", name: "Заявка на изменение данных", status: "Отказано" },
+        { key: "1", id: "1", name: "Заявка на сотрудника", status: "В процессе" },
+        { key: "2", id: "2", name: "Заявка на транспорт", status: "Готово" },
+        { key: "3", id: "3", name: "Заявка на материальный пропуск", status: "Отказано" },
     ];
 
     const navigate = useNavigate();

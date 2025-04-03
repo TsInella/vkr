@@ -3,28 +3,51 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 80vh;
   text-align: center;
 }
 
 .title {
   font-size: 2rem;
+  text-align: center;
   margin-bottom: 30px;
 }
 
-.buttons{
+.buttons-container {
+  margin-top: 50px; // Увеличенный отступ сверху для всего блока кнопок
   display: flex;
-  gap: 20px; // отступы между кнопками
+  flex-direction: column;
+  align-items: center;
+  gap: 30px; // Отступ между заголовком и кнопками
 }
 
-.requestbutton{
-  background-color: #a3c1d6;  // Цвет фона кнопки
+.buttons-title {
+  font-size: 1.2rem;
+  margin-bottom: 20px; // Дополнительный отступ под текстом
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+.divider {
+  margin: 24px 0;
+  border-color: #e8e8e8;
+}
+.requestbutton {
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #000000 !important;
+  font-size: 16px;
+  font-weight: bold;
+  width: 350px;
+  height: 50px;
   border: none;
-  color: white;
-  font-size: 1rem;
-  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-left: 0; // Убрал фиксированный отступ слева
 
   &:hover {
-    background-color: #8ea9c5;  // немного темнее при наведении
+    background-color: darken(#A3C1D6, 10%);
   }
 }

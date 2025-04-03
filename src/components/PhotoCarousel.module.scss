@@ -1,0 +1,95 @@
+.carouselContainer {
+  width: 100%;
+  max-width: 1620px;
+  margin: 0 auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.photoCarousel {
+  width: 100%;
+  height: 492px;
+
+  :global {
+    .slick-slider {
+      width: 100%;
+      height: 100%;
+    }
+
+    .slick-list {
+      width: 100%;
+      height: 100%;
+    }
+
+    .slick-track {
+      display: flex;
+      height: 100%;
+    }
+
+    .slick-slide {
+      height: 100%;
+
+      & > div {
+        height: 100%;
+      }
+    }
+
+    .slick-dots {
+      bottom: 20px;
+
+      li button {
+        background: #fff;
+        opacity: 0.5;
+
+        &:before {
+          display: none;
+        }
+      }
+
+      li.slick-active button {
+        background: #fff;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.carouselImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.arrowButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.3) !important;
+  border: none;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.5) !important;
+  }
+
+  &[aria-label="Previous"] {
+    left: 20px;
+  }
+
+  &[aria-label="Next"] {
+    right: 20px;
+  }
+}

@@ -12,16 +12,22 @@ import NewRequest from "../pages/NewRequest";
 import PersonRequest from "../pages/PersonRequest";
 import TransportRequest from "../pages/TransportRequest";
 import MaterialRequest from "../pages/MaterialRequest";
+import logo from '../assets/shipping.png'
 
-//сначала нужно сделать backend
 
 const Header: React.FC = () => {
     return(
         <Router>
             <header className={styles.header}>
                 {/* Логотип слева */}
-                <div className={styles.logo}>LOGO</div>
+                <Link to='/' className={styles.logoContainer}>
+                    <img
+                        src={logo}
+                        alt="Логотип компании"
+                        className={styles.logoImage}
+                    />
 
+                </Link>
                 {/* Меню по центру */}
                 <nav className={styles.nav}>
                     <NavLink to="/" className={({ isActive}) => ( isActive? styles.active : styles.link )} >

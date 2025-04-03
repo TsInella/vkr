@@ -38,7 +38,7 @@ const MaterialRequest: React.FC = () => {
                 <Button
                     type="primary"
                     className={styles.registerButton}
-                    onClick={() => navigate("/newrequest")}
+                    onClick={() => navigate("/request")}
                 >
                     Создать заявку
                 </Button>

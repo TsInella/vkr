@@ -11,11 +11,17 @@ header {
   z-index: 1000;
 }
 
-.logo {
-  font-size: 22px;
-  font-weight: bold;
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
+.logoImage {
+  height: 60px;
+  width: 75px;
+}
 nav {
   display: flex;
   gap: 20px;

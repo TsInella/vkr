@@ -2,9 +2,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 70vh;
   background-color: white;
-  overflow: hidden; // Убирает скролл
+  padding: 10px;
+
 }
 
 .title {
@@ -13,63 +14,76 @@
   font-weight: bold;
   margin-bottom: 10px;
 }
+.input {
+  width: 100%;
+  height: 40px;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
 
+  &:hover {
+    border-color: rgba(215, 215, 215, 0.07);
+  }
+
+  &:focus {
+    border-color: #575959;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+}
 .registerCard {
   background-color: #ffffff;
-  padding: 20px;
+  padding: 5px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 600px;
-  height: 70%
+  width: 100%;
+  max-width: 600px;
 }
 
 .inputGroup {
   display: flex;
-  flex-direction: row;
-  margin-bottom: 10px;
-  padding: 1px;
-  gap:30px
+  flex-direction: column;
+  margin-bottom: 5px;
 
 }
 
 .label {
   font-size: 16px;
   color: black;
-  margin-bottom: 5px;
-  text-align: left;
-}
-
-.input {
-  background-color: #e3e3e3;
-  color: black;
-  height: 30px;
+  margin-bottom: 4px;
+  font-weight: 500;
 }
 
 .passportGroup {
   display: flex;
-  justify-content: space-between;
+  gap: 16px;
+
+  .inputGroup {
+    flex: 1;
+  }
 }
 
 .subtitle {
-  text-align: center;
   font-size: 18px;
   font-weight: bold;
-  margin: 20px 0;
+  margin: 20px 0 10px 0;
+  text-align: left;
+  color: #000000;
 }
 
 .registerButton {
-  width: 60%;
-  height: 20%;
-  background-color: #7698b2 !important;
-  color: black;
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #000000 !important;
   font-size: 16px;
   font-weight: bold;
-  margin-top: 15px;
-  margin-left: 100px;
+
+  margin-left: 130px;
+  margin-top: 20px;
+  width: 50%;
+  height: 50px;
   border: none;
-  padding: 10px;
-  border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s;
 
   &:hover {
     background-color: darken(#A3C1D6, 10%);

@@ -1,0 +1,127 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.carouselWrapper {
+  width: 100%;
+  max-width: 1620px;
+  margin: 0 auto;
+}
+
+.contentContainer {
+  max-width: 1200px;
+  width: 100%;
+  margin: 40px auto;
+  padding: 0 24px;
+
+  .contentCard {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+
+    .headerSection {
+      margin-bottom: 24px;
+
+      .mainTitle {
+        text-align: center;
+        margin-bottom: 8px;
+        color: #333;
+        font-weight: 600;
+      }
+
+      .akonTitle {
+        text-align: center;
+        color: #666;
+        font-weight: 500;
+        margin-bottom: 0;
+      }
+    }
+
+    .description {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      margin-bottom: 32px;
+    }
+
+    .divider {
+      margin: 24px 0;
+      border-color: #e8e8e8;
+    }
+
+    .sectionWithTitle {
+      margin-bottom: 32px;
+
+      .sectionTitle {
+        color: #333;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+
+      .rules {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #333;
+
+        .ant-typography strong {
+          color: #333;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .footerSection {
+      display: flex;
+      justify-content: space-between;
+
+      .contactsColumn {
+        flex: 0 0 48%;
+
+        .columnTitle {
+          display: block;
+          margin-bottom: 16px;
+          font-size: 16px;
+          color: #333;
+          font-weight: 600;
+        }
+
+        .contactItem {
+          margin-bottom: 12px;
+          padding: 8px 0;
+          border-bottom: 1px solid #f0f0f0;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          .ant-typography {
+            font-size: 15px;
+            color: #333;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contentContainer {
+    padding: 0 16px;
+    margin: 24px auto;
+
+    .contentCard {
+      padding: 24px 16px;
+
+      .footerSection {
+        flex-direction: column;
+
+        .contactsColumn {
+          margin-bottom: 24px;
+        }
+      }
+    }
+  }
+}

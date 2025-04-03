@@ -42,7 +42,7 @@ const TransportRequest: React.FC = () => {
                 <Button
                     type="primary"
                     className={styles.registerButton}
-                    onClick={() => navigate("/newrequest")}
+                    onClick={() => navigate("/request")}
                 >
                     Подать заявку
                 </Button>

@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   background: white;
-  height: 100vh;
+  height: 70vh;
   justify-content: center;
 }
 
@@ -18,8 +18,20 @@
 }
 
 .createButton {
-  background-color: #A3C1D6;
-  color: black;
-  border: none;
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #000000 !important;
   font-size: 16px;
+  font-weight: bold;
+
+
+  width: 20%;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: darken(#A3C1D6, 10%);
+  }
 }

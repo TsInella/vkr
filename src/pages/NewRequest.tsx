@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'antd';
+import {Button, Divider} from 'antd';
 import styles from './NewRequest.module.scss';
 import {useNavigate} from "react-router-dom";
 
@@ -8,6 +8,7 @@ const NewRequest: React.FC = () => {
     return (
         <div className={styles.container}>
             <h1>Создать заявку</h1>
+            <Divider className={styles.divider} />
             <div className={styles.buttons}>
                 <Button className={styles.requestbutton} onClick = {() => navigate('/person') }>Заявка на сотрудника</Button>
                 <Button className={styles.requestbutton} onClick = {() => navigate ('/transport')}>Заявка на транспорт</Button>

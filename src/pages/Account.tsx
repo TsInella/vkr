@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { Card, Avatar, Tag, Form, Input, Button, DatePicker, Upload, notification, Row, Col } from 'antd';
 import { CheckCircleFilled, UserOutlined, UploadOutlined } from '@ant-design/icons';
+import dayjs from 'dayjs';
+import { ConfigProvider } from 'antd';
+import styles from './Account.module.scss'
+
+
+
 
 const Account: React.FC = () => {
     const [form] = Form.useForm();
@@ -34,19 +40,39 @@ const Account: React.FC = () => {
             return;
         }
         if (info.file.status === 'done') {
-            // Здесь должна быть логика загрузки на сервер
             setUserData({ ...userData, avatar: info.file.response.url });
             setLoading(false);
         }
     };
 
     const onFinish = (values: any) => {
-        setUserData({ ...userData, ...values });
+        const formattedValues = {
+            ...values,
+            passport: {
+                ...values.passport,
+                issueDate: values.passport.issueDate?.format('YYYY-MM-DD'),
+                birthDate: values.passport.birthDate?.format('YYYY-MM-DD')
+            }
+        };
+
+        setUserData({ ...userData, ...formattedValues });
         notification.success({
             message: 'Данные сохранены',
             icon: <CheckCircleFilled style={{ color: '#52c41a' }} />,
         });
     };
+
+    const initialValues = {
+        ...userData,
+        passport: {
+            ...userData.passport,
+            issueDate: userData.passport.issueDate ? dayjs(userData.passport.issueDate) : null,
+            birthDate: userData.passport.birthDate ? dayjs(userData.passport.birthDate) : null
+        }
+    };
+
+
+
 
     return (
         <Card title="Личный кабинет" style={{ margin: 16 }}>
@@ -59,9 +85,29 @@ const Account: React.FC = () => {
                             icon={<UserOutlined />}
                             style={{ marginBottom: 16 }}
                         />
-                        <Tag color={userData.active ? 'green' : 'red'}>
-                            {userData.active ? 'Активно' : 'Не активно'}
-                        </Tag>
+
+                        {/* Улучшенное отображение статуса */}
+                        <div style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            marginBottom: 16
+                        }}>
+                            <div style={{
+                                width: 8,
+                                height: 8,
+                                borderRadius: '50%',
+                                backgroundColor: userData.active ? '#52c41a' : '#ff4d4f',
+                                marginRight: 8
+                            }} />
+                            <span style={{
+                                color: userData.active ? '#52c41a' : '#ff4d4f',
+                                fontWeight: 500
+                            }}>
+                                {userData.active ? 'Активен' : 'Не активен'}
+                            </span>
+                        </div>
+
                         <Upload
                             name="avatar"
                             showUploadList={false}
@@ -79,7 +125,7 @@ const Account: React.FC = () => {
                     <Form
                         form={form}
                         layout="vertical"
-                        initialValues={userData}
+                        initialValues={initialValues}
                         onFinish={onFinish}
                     >
                         <Form.Item
@@ -104,7 +150,7 @@ const Account: React.FC = () => {
                                 </Col>
                                 <Col span={8}>
                                     <Form.Item label="Дата рождения" name={['passport', 'birthDate']}>
-                                        <DatePicker style={{ width: '100%' }} />
+                                        <DatePicker style={{ width: '100%' }} format="YYYY-MM-DD" />
                                     </Form.Item>
                                 </Col>
                             </Row>
@@ -116,7 +162,7 @@ const Account: React.FC = () => {
                             <Row gutter={16}>
                                 <Col span={12}>
                                     <Form.Item label="Дата выдачи" name={['passport', 'issueDate']}>
-                                        <DatePicker style={{ width: '100%' }} />
+                                        <DatePicker style={{ width: '100%' }} format="YYYY-MM-DD" />
                                     </Form.Item>
                                 </Col>
                                 <Col span={12}>
@@ -168,7 +214,7 @@ const Account: React.FC = () => {
                             </Row>
                         </Card>
 
-                        <Button type="primary" htmlType="submit">
+                        <Button type="primary" className = {styles.button}htmlType="submit">
                             Сохранить изменения
                         </Button>
                     </Form>
