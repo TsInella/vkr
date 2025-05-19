@@ -1,19 +1,157 @@
-.button{
-  background-color: #ffffff !important;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  color: #000000 !important;
-  font-size: 16px;
-  font-weight: bold;
+.container {
+  background: #ffffff;
+  min-height: 100vh;
+}
 
-  margin-left: 350px;
-  margin-top: 20px;
-  width: 30%;
-  height: 50px;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.mainTitle {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1a1a1a;
+  letter-spacing: -0.5px;
+}
+
+.mainCard {
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  border: 1px solid #e8e8e8;
+
+  .ant-card-head-title {
+    padding: 24px 0;
+  }
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 4%;
+  margin-left: 38%;
+
+}
+
+.statusCard {
+  border-radius: 12px;
+  transition: transform 0.2s;
+
 
   &:hover {
-    background-color: darken(#A3C1D6, 10%);
+    transform: translateY(-2px);
+  }
+}
+
+.statusWrapper {
+  position: relative;
+  text-align: center;
+  padding: 24px 0;
+}
+
+.statusGlow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+
+  pointer-events: none;
+}
+
+.activeTag {
+  font-size: 16px;
+  padding: 12px 24px;
+  border-radius: 24px;
+  border: none;
+  background: #52c41a;
+  color: white;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(82, 196, 26, 0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(82, 196, 26, 0.35);
+  }
+}
+
+.formCard {
+  border-radius: 12px;
+  background: white;
+  border: 1px solid #e8e8e8;
+
+  .ant-form-item-label {
+    label {
+      font-weight: 500;
+      color: #434343;
+    }
+  }
+}
+
+.form {
+  .ant-input {
+    border-radius: 8px;
+    padding: 12px 16px;
+    border: 1px solid #d9d9d9;
+    transition: all 0.3s;
+
+    &:hover {
+      border-color: #40a9ff;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+    }
+  }
+}
+
+.saveButton {
+  height: 48px;
+  border-radius: 8px;
+  background-color: rgba(51, 109, 171, 0.8) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #ffffff !important;
+  width: 40%;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  margin-left: 25%;
+  margin-top: 2%;
+
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  &:hover {
+    background: #40a9ff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(24, 144, 255, 0.35);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 16px;
+  }
+
+  .mainTitle {
+    font-size: 24px;
+  }
+
+  .cardTitle {
+    font-size: 18px;
+  }
+
+  .saveButton {
+    height: 44px;
+    font-size: 14px;
   }
 }

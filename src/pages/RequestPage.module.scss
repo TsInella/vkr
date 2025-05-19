@@ -10,6 +10,7 @@
 .title {
   font-size: 24px;
   margin-bottom: 16px;
+
 }
 
 .table {
@@ -18,13 +19,13 @@
 }
 
 .createButton {
-  background-color: #ffffff !important;
+  background-color: rgba(51, 109, 171, 0.8) !important;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  color: #000000 !important;
+  color: #ffffff !important;
   font-size: 16px;
   font-weight: bold;
-
-
+  margin-left: 35%;
+  margin-top: 3%;
   width: 20%;
   height: 50px;
   border: none;

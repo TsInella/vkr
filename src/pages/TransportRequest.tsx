@@ -3,6 +3,7 @@ import { Input, Button, Card } from "antd";
 import { EyeInvisibleOutlined, EyeTwoTone, UserOutlined, LockOutlined } from "@ant-design/icons";
 import styles from "./TransportRequest.module.scss";
 import { useNavigate } from "react-router-dom";
+import Header from "../components/Header";
 
 const TransportRequest: React.FC = () => {
     const [passwordVisible, setPasswordVisible] = useState(false);
@@ -10,6 +11,8 @@ const TransportRequest: React.FC = () => {
     const navigate = useNavigate();
 
     return (
+        <>
+            <Header/>
         <div className={styles.container}>
 
             <Card className={styles.registerCard}>
@@ -48,6 +51,7 @@ const TransportRequest: React.FC = () => {
                 </Button>
             </Card>
         </div>
+        </>
     );
 };
 

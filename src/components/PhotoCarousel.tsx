@@ -25,6 +25,8 @@ const PhotoCarousel = (props: PhotoCarouselProps) => {
     return (
         <div className={styles.carouselContainer}>
             <Carousel
+                autoplay
+                autoplaySpeed={10000}
                 ref={carouselRef}
                 dots={true}
                 arrows={false} // Отключаем стрелки
@@ -43,7 +45,9 @@ const PhotoCarousel = (props: PhotoCarouselProps) => {
                         />
                     </div>
                 ))}
-            </Carousel>
+            </Carousel
+
+                >
         </div>
     );
 };

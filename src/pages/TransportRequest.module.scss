@@ -21,6 +21,9 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 600px;
+  justify-content: center;
+  margin-top:5%;
+
 }
 
 .inputGroup {
@@ -72,9 +75,9 @@
 }
 
 .registerButton {
-  background-color: #ffffff !important;
+  background-color: rgba(51, 109, 171, 0.8) !important;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  color: #000000 !important;
+  color: #ffffff !important;
   font-size: 16px;
   font-weight: bold;
 

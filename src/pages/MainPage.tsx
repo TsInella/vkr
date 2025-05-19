@@ -3,12 +3,15 @@ import PhotoCarousel from '../components/PhotoCarousel';
 import { Card, Typography, Divider, Row, Col, Image } from 'antd';
 import styles from './MainPage.module.scss';
 import processImage from '../assets/proccess.png'; // Изображение для процесса
-import rulesImage from '../assets/rules.png'; // Изображение для правил
+import rulesImage from '../assets/rules.png';
+import Header from "../components/Header"; // Изображение для правил
 
 const { Title, Paragraph, Text } = Typography;
 
 const MainPage: React.FC = () => {
   return (
+      <>
+        <Header/>
       <div className={styles.mainContainer}>
         {/* Карусель вверху страницы */}
         <div className={styles.carouselWrapper}>
@@ -108,6 +111,7 @@ const MainPage: React.FC = () => {
           </Card>
         </div>
       </div>
+      </>
   );
 };
 
