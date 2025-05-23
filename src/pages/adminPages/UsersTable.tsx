@@ -12,6 +12,7 @@ interface UserData {
     name: string;
     email: string;
     registrationDate: string;
+    role?: string; // Добавляем поле роли, если оно есть в API
 }
 
 const initialData: UserData[] = [

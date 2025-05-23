@@ -43,6 +43,7 @@ const Registration: React.FC = () => {
     const newErrors: Partial<RegistrationData> = {};
 
     if (!formData.name) newErrors.name = "Введите имя";
+    if (!formData.name) newErrors.name = "Введите фамилию";
     if (!formData.email) {
       newErrors.email = "Введите email";
     } else if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
@@ -119,6 +120,16 @@ const Registration: React.FC = () => {
                   onChange={handleChange}
                   status={errors.name ? "error" : ""}
               />
+              <Input
+                  className={styles.input}
+                  size="large"
+                  placeholder="Введите фамилию"
+                  prefix={<UserOutlined />}
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  status={errors.name ? "error" : ""}
+              />
               {errors.name && <div className={styles.errorText}>{errors.name}</div>}
 
               <Input
@@ -175,7 +186,7 @@ const Registration: React.FC = () => {
             Зарегистрироваться
           </Button>
 
-          <Space className={styles.bottomButtons}>
+
             <Button
                 type="link"
                 className={styles.forgotButton}
@@ -191,7 +202,7 @@ const Registration: React.FC = () => {
             >
               Войти в аккаунт
             </Button>
-          </Space>
+
         </Card>
       </div>
         </>
