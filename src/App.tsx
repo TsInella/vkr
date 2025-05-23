@@ -39,13 +39,13 @@ const App: React.FC = () => {
                     <Route path="/person" element={<PersonRequest />} />
                     <Route path="/transport" element={<TransportRequest />} />
                     <Route path="/material" element={<MaterialRequest />} />
-                    <Route path="/request" element={<RequestPage />} />
-                    <Route path="/createtemplate" element={<CreateTemplate />} />
-                    <Route path="/generate" element={<GeneratePass />} />
-                    <Route path="/pass" element={<TablePass />} />
-                    <Route path="/adminrequest" element={<TableRequest />} />
-                    <Route path="/userstable" element={<UsersTable />} />
-                    <Route path="/usercreate" element={<UserCreatePage/>} />
+                    <Route path="/request" element={<RequestPage />} /> // //таблица с заявками (для клиента)
+                    <Route path="/createtemplate" element={<CreateTemplate />} /> //страница создание шаблона
+                    <Route path="/generate" element={<GeneratePass />} /> //генерация qr кода
+                    <Route path="/pass" element={<TablePass />} /> //таблица пропусков (для админа)
+                    <Route path="/adminrequest" element={<TableRequest />} /> //таблица с заявками (для админа)
+                    <Route path="/userstable" element={<UsersTable />} /> //таблица пользователей (для админа)
+                    <Route path="/usercreate" element={<UserCreatePage/>} /> //страница создания пользователя (для админа)
                     <Route path="/notfound" element={<NotFoundPage/>} />
 
                     {/* Общие защищенные маршруты */}
