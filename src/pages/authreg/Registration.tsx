@@ -33,6 +33,7 @@ const Registration: React.FC = () => {
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<Partial<RegistrationData>>({});
+
   const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -75,28 +76,15 @@ const Registration: React.FC = () => {
 
     setLoading(true);
     try {
-      // Отправляем только email и password, согласно вашей API схеме
       const response = await register({
         email: formData.email,
         name: formData.name,
         surname: formData.surname,
         password: formData.password,
-      }).then((response) => {
-        console.log(response, (response as any).data);
-        return response.data.json();
-        // if (response.ok) {
-        //   return response.json();
-        // }
-        // console.log(response, (response as any).data)
-        // throw new Error(response.json() as any);
       });
-      console.log(response);
-
-      // Сохраняем токен
-      // const {message: msg} = response as {message: string}
-      // localStorage.setItem("token", response.token);
-      messageApi.success("Регистрация прошла успешно!");
-      // navigate("/account");
+      messageApi.success(
+        `Регистрация прошла успешно. \n ${response.data.message}!`
+      );
     } catch (error) {
       const err = error as AxiosError<any>;
       console.log(error);
@@ -216,6 +204,7 @@ const Registration: React.FC = () => {
           <Button
             type="link"
             className={styles.forgotButton}
+            disabled
             onClick={() => navigate("/forgot-password")}
           >
             Восстановить доступ

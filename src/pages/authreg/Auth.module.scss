@@ -1,10 +1,10 @@
- .container {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     height:80vh;
-     background-color: white;
-   }
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background-color: white;
+}
 
 .title {
   text-align: center;
@@ -18,10 +18,10 @@
   background-color: #ffffff;
   padding: 30px;
   justify-content: center;
-  margin-top:7%;
+  margin-top: 7%;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 30%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -33,7 +33,6 @@
   gap: 5px;
   text-align: center;
   justify-content: center;
-
 }
 
 .label {
@@ -46,7 +45,7 @@
   width: 90%;
   background-color: white;
   color: black;
-  margin-left:5%;
+  margin-left: 5%;
 }
 
 .loginButton {
@@ -55,7 +54,7 @@
   color: #ffffff !important;
   font-size: 16px;
   font-weight: bold;
-  margin-top:5%;
+  margin-top: 5%;
   width: 75%;
   height: 40px;
   border: none;
@@ -63,37 +62,35 @@
   transition: 0.3s;
 
   &:hover {
-    background-color: darken(#A3C1D6, 10%);
+    background-color: darken(#a3c1d6, 10%);
   }
 }
 
- .regButton {
-   margin-right: auto;
-   background-color: rgba(51, 109, 171, 0.8) !important;
-   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-   color: #ffffff !important;
-   width: 47%;
-   font-size: 14px;
-   font-weight: bold;
-   margin-left: 3%;
+.regButton {
+  margin-right: auto;
+  background-color: rgba(51, 109, 171, 0.8) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #ffffff !important;
+  width: 47%;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 3%;
 
-   &:hover {
-     background-color: darken(#A3C1D6, 10%);
-   }
- }
- .forgotButton {
-   margin-left: auto;
-   background-color: #ffffff !important;
-   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-   color: #000000 !important;
-   font-size: 14px;
-   font-weight: bold;
-   margin-top: 7%;
-   width: 50%;
+  &:hover {
+    background-color: darken(#a3c1d6, 10%);
+  }
+}
+.forgotButton {
+  margin-left: auto;
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #000000 !important;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 7%;
+  width: 50%;
 
-
-
-   &:hover {
-     background-color: darken(#A3C1D6, 10%);
-   }
- }
+  &:hover {
+    background-color: darken(#a3c1d6, 10%);
+  }
+}
