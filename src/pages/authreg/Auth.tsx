@@ -77,7 +77,7 @@ const Auth: React.FC = () => {
 
       localStorage.setItem("token", token);
       messageApi.success(msg || "Авторизация прошла успешно!");
-      navigate("/account");
+      navigate("/");
     } catch (error) {
       const err = error as AxiosError<any>;
       console.log(error);
