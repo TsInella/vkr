@@ -18,9 +18,12 @@ import GeneratePass from "../pages/adminPages/GeneratePass";
 import TablePass from "../pages/adminPages/TablePass";
 import TableRequest from "../pages/adminPages/TableRequest";
 import { useNavigate } from "react-router";
+import { jwtDecode } from "jwt-decode";
 
 const Header: React.FC = () => {
   const token = localStorage.getItem("token");
+  const data = jwtDecode(token as string);
+
   const navigate = useNavigate();
   return (
     <header className={styles.header}>
@@ -36,6 +39,16 @@ const Header: React.FC = () => {
         >
           Главная
         </NavLink>
+        {"role" in data && data.role === "admin" ? (
+          <NavLink
+            to="/userstable"
+            className={({ isActive }) =>
+              isActive ? styles.active : styles.link
+            }
+          >
+            Пользователи
+          </NavLink>
+        ) : null}
         <NavLink
           to="/templates"
           className={({ isActive }) => (isActive ? styles.active : styles.link)}

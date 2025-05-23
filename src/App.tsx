@@ -19,7 +19,7 @@ import TableRequest from "./pages/adminPages/TableRequest";
 import styles from "./components/Header.module.scss";
 import logo from "./assets/shipping.png";
 import { NavLink } from "react-router";
-import UsersTable from "./pages/adminPages/UsersTable";
+import { UsersTable } from "./pages/adminPages/UsersTable";
 import UserCreatePage from "./pages/adminPages/UserCreatePage";
 import NotFoundPage from "./pages/NotFoundPage";
 import { ConfigProvider } from "antd";
