@@ -21,7 +21,23 @@
   width: 30%;
   margin-top: 7%;
 }
+.errorText {
+  color: #ff4d4f;
+  font-size: 12px;
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
 
+.bottomButtons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.forgotButton, .regButton {
+  padding: 0;
+}
 .formContainer {
   display: flex;
   flex-direction: column;

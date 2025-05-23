@@ -22,9 +22,11 @@ import {NavLink} from "react-router";
 import UsersTable from "./pages/adminPages/UsersTable";
 import UserCreatePage from "./pages/adminPages/UserCreatePage";
 import NotFoundPage from "./pages/NotFoundPage";
+import {ConfigProvider}from 'antd'
 
 const App: React.FC = () => {
     return (
+        <ConfigProvider>
         <Router>
             <AuthProvider>
 
@@ -63,6 +65,7 @@ const App: React.FC = () => {
                 </Routes>
             </AuthProvider>
         </Router>
+        </ConfigProvider>
     );
 }
 
